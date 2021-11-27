@@ -55,12 +55,12 @@ public class UserController {
          return servicio.updateUser(user);
     }
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUser(@PathVariable("id") int id) {
          servicio.deleteUser(id);
     }
     @DeleteMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public List<User> deleteUser() {
          return servicio.deleteAll();
     }

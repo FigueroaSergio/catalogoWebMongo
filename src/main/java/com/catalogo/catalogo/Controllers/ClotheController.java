@@ -48,12 +48,12 @@ public class ClotheController {
          return servicio.updateClothe(clothe);
     }
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUser(@PathVariable("id") String id) {
          servicio.deleteClothe(id);
     }
     @DeleteMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public List<Clothe> deleteAll() {
          return servicio.deleteAll();
     }
