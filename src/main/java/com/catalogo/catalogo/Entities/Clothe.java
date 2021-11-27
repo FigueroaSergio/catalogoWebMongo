@@ -41,11 +41,11 @@ public class Clothe {
     public String getCategory() {
         return category;
     }
-
+    
     public void setCategory(String category) {
         this.category = category;
     }
-
+    
     public String getSize() {
         return size;
     }

@@ -25,8 +25,6 @@ public class User {
     private Integer id;
     private String identification;
     private String name;
-    private Date birthtDay;
-    private String monthBirthtDay;
     private String address;
     private String cellPhone;
     private String email;
@@ -57,21 +55,7 @@ public class User {
             this.name = name;
         }
 
-        public Date getBirthtDay() {
-            return birthtDay;
-        }
-
-        public void setBirthtDay(Date birthtDay) {
-            this.birthtDay = birthtDay;
-        }
-
-        public String getMonthBirthtDay() {
-            return monthBirthtDay;
-        }
-
-        public void setMonthBirthtDay(String monthBirthtDay) {
-            this.monthBirthtDay = monthBirthtDay;
-        }
+        
 
         public String getAddress() {
             return address;

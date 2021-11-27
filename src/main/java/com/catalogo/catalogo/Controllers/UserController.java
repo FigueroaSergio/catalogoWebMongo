@@ -59,4 +59,9 @@ public class UserController {
     public void deleteUser(@PathVariable("id") int id) {
          servicio.deleteUser(id);
     }
+    @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<User> deleteUser() {
+         return servicio.deleteAll();
+    }
 }

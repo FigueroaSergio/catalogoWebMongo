@@ -53,4 +53,8 @@ public class UserRepository {
             return new User();
         }
     }
+
+    public void deleteAll() {
+        crud1.deleteAll();
+    }
 }

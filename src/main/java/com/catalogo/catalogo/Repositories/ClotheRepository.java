@@ -39,4 +39,10 @@ public class ClotheRepository {
                    return false;
                 }
 	    }
+
+    public void deletAll() {
+         crud2.deleteAll();
+    }
+
+    
 }

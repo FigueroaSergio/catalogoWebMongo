@@ -7,6 +7,7 @@ package com.catalogo.catalogo.Services;
 
 import com.catalogo.catalogo.Entities.User;
 import com.catalogo.catalogo.Repositories.UserRepository;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,12 @@ public class UserServices {
        else{
            return repoUser.save(user);
        }
+    }
+
+    public List<User> deleteAll() {
+        repoUser.deleteAll();
+        List<User> list =new ArrayList<User>(); 
+        return list;
     }
 
     

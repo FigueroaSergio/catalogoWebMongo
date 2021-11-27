@@ -52,4 +52,9 @@ public class ClotheController {
     public void deleteUser(@PathVariable("id") String id) {
          servicio.deleteClothe(id);
     }
+    @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<Clothe> deleteAll() {
+         return servicio.deleteAll();
+    }
 }
