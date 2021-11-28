@@ -61,7 +61,7 @@ public class UserController {
     }
     @DeleteMapping("/all")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public List<User> deleteUser() {
-         return servicio.deleteAll();
+    public void deleteUser() {
+          servicio.deleteAll();
     }
 }

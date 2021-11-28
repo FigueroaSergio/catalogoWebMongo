@@ -39,9 +39,9 @@ public class UserRepository {
         return crud1.findById(id).orElse(null);
     }
 
-    public boolean userEmailExist(String email) {
-            Optional<User> userDB= crud1.getUserByEmail(email);   
-            return userDB.isPresent();
+    public User userEmailExist(String email) {
+            User userDB= crud1.getUserByEmail(email).orElse(null);   
+            return userDB;
     }
 
     public User getUserByEmailAndPassword(String email, String password) {

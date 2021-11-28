@@ -20,10 +20,15 @@ import org.springframework.stereotype.Service;
 public class ClotheService {
     @Autowired
     private ClotheRepository repoClothe;
+    @Autowired
+    private generateSequence sequenceGenerator;
     public List<Clothe> getAll() {
         return repoClothe.getAll();
     }
     public Clothe save(Clothe clothe){
+            if(clothe.getReference()==null){
+                clothe.setReference(Integer.toString(sequenceGenerator.generateSequence(Clothe.SEQUENCE_NAME)));
+            }
             return repoClothe.save(clothe);
     }
 
