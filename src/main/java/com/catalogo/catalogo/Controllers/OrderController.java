@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,7 +36,7 @@ public class OrderController {
     public List<Order> getOrders(){
         return servicio.getAll();
     }
-    @GetMapping("/zone/{zone}")
+    @GetMapping("/zona/{zone}")
     public List<Order> getOrdersByZone(@PathVariable("zone") String zone){
         return servicio.getOrdersByZone(zone);
     }
@@ -47,5 +48,10 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public Order save(@RequestBody Order order) {
         return servicio.save(order);
+    }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Order updateOrder(@RequestBody Order order) {
+        return servicio.updateOrder(order);
     }
 }

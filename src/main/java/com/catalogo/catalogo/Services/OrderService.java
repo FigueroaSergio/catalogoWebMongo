@@ -41,5 +41,9 @@ public class OrderService {
             }
             return repoOrder.save(order);    
     }
+
+    public Order updateOrder(Order order) {
+        return repoOrder.updateOrder(order);
+    }
     
 }
