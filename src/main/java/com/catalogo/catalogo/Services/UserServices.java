@@ -76,5 +76,9 @@ public class UserServices {
         return list;
     }
 
+    public User getUser(int id) {
+        return repoUser.getUserByID(id);
+    }
+
     
 }

@@ -43,6 +43,10 @@ public class ClotheRepository {
     public void deletAll() {
          crud2.deleteAll();
     }
+    
+    public Clothe getClotheById(String id){
+	        return crud2.findById(id).orElse(null);
+	    }
 
     
 }

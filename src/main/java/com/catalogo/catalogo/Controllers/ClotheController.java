@@ -37,6 +37,10 @@ public class ClotheController {
     public List<Clothe> getUsers(){
         return servicio.getAll();
     }
+    @GetMapping("/{id}")
+    public Clothe getUsers(@PathVariable("id") String id){
+        return servicio.getClotheById(id);
+    }
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public Clothe save(@RequestBody Clothe clothe) {

@@ -67,4 +67,7 @@ public class ClotheService {
         List<Clothe> list =new ArrayList<Clothe>();            
         return list ;
     }
+    public Clothe getClotheById(String id){
+        return repoClothe.getClotheById(id);
+    }
 }

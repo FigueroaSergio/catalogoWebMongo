@@ -36,6 +36,10 @@ public class UserController {
     public List<User> getUsers(){
         return servicio.getAll();
     }
+    @GetMapping("/{id}")
+    public User getUsers(@PathVariable("id") int id){
+        return servicio.getUser(id);
+    }
     @GetMapping("/{email}/{password}")
     public User userEmailExist(@PathVariable("email") String email,@PathVariable("password") String password){
         return servicio.getUserByEmailAndPassword(email,password);
