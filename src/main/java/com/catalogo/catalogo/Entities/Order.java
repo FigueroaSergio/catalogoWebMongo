@@ -42,7 +42,7 @@ public class Order {
 
     private Date registerDay;
 
-    private String status;
+    private String status=PENDING;
 
     private User salesMan;
 
