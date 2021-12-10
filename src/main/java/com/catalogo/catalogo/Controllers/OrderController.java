@@ -2,6 +2,7 @@ package com.catalogo.catalogo.Controllers;
 
 import com.catalogo.catalogo.Entities.Order;
 import com.catalogo.catalogo.Services.OrderService;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,6 +40,18 @@ public class OrderController {
     @GetMapping("/zona/{zone}")
     public List<Order> getOrdersByZone(@PathVariable("zone") String zone){
         return servicio.getOrdersByZone(zone);
+    }
+    @GetMapping("/salesman/{id}")
+    public List<Order> getOrderBySalesman(@PathVariable("id") int id){
+        return servicio.getOrderBySalesman(id);
+    }
+    @GetMapping("/date/{date}/{id}")
+    public List<Order> getOrderByDateAndSalesman(@PathVariable("date") String date,@PathVariable("id") int id){
+        return servicio.getOrderByDateAndSalesman(date,id);
+    }
+    @GetMapping("/state/{status}/{id}")
+    public List<Order> getOrderByStatueAndSalesman(@PathVariable("status") String status,@PathVariable("id") int id){
+        return servicio.getOrderByStateAndSalesman(status,id);
     }
     @GetMapping("/{id}")
     public Order getOrdersByZone(@PathVariable("id") int id){

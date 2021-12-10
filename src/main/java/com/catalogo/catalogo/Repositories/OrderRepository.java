@@ -7,6 +7,7 @@ package com.catalogo.catalogo.Repositories;
 
 import com.catalogo.catalogo.Entities.Order;
 import com.catalogo.catalogo.Interfaces.OrderInterface;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -43,5 +44,19 @@ public class OrderRepository {
                 }
 	       
 	    }
+
+    public List<Order> getOrderBySalesman(int id) {
+           return (List<Order>) crud3.getOrderBySalesman(id);
+    }
+
+    public List<Order> getOrderByDateAndSalesman(Date a, Date b,int id) {
+        
+        return (List<Order>) crud3.getOrderByDateAndSalesman(a, b, id);
+    }
+
+    
+    public List<Order> getOrderByStateAndSalesman(String status, int id) {
+        return (List<Order>) crud3.getOrderByStateAndSalesman(status, id);
+    }
     
 }
