@@ -41,12 +41,16 @@ public class UserController {
         return servicio.getUser(id);
     }
     @GetMapping("/{email}/{password}")
-    public User userEmailExist(@PathVariable("email") String email,@PathVariable("password") String password){
+    public User userEmailAndPassworExist(@PathVariable("email") String email,@PathVariable("password") String password){
         return servicio.getUserByEmailAndPassword(email,password);
     }
     @GetMapping("/emailexist/{email}")
     public boolean userEmailExist(@PathVariable("email") String email){
         return servicio.userEmailExists(email);
+    }
+    @GetMapping("/birthday/{moth}")
+    public List<User> getUsersByBirthday(@PathVariable("moth") String month){
+        return servicio.getUsersByBirthday(month);
     }
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)

@@ -70,4 +70,11 @@ public class ClotheService {
     public Clothe getClotheById(String id){
         return repoClothe.getClotheById(id);
     }
+
+    public List<Clothe> getClotheByDescription(String des) {
+        return repoClothe.getClotheByDescription(des);
+    }
+
+    public List<Clothe> getClotheByPrice(Integer price) {
+return repoClothe.getClotheByPrice(price);   } 
 }

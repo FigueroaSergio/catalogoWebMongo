@@ -42,7 +42,7 @@ public class UserServices {
     }
     public void deleteUser(int id){
             repoUser.deleteUser(id);
-    }
+    }               
 
     public boolean userEmailExists(String email) {
         if(repoUser.userEmailExist(email)==null){
@@ -78,6 +78,10 @@ public class UserServices {
 
     public User getUser(int id) {
         return repoUser.getUserByID(id);
+    }
+
+    public List<User> getUsersByBirthday(String month) {
+        return repoUser.getUsersByBirthday(month);
     }
 
     

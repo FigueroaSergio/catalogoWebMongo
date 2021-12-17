@@ -34,12 +34,20 @@ public class ClotheController {
     @Autowired
     private ClotheService servicio;
     @GetMapping("/all")
-    public List<Clothe> getUsers(){
+    public List<Clothe> getClothe(){
         return servicio.getAll();
     }
     @GetMapping("/{id}")
-    public Clothe getUsers(@PathVariable("id") String id){
+    public Clothe getClothe(@PathVariable("id") String id){
         return servicio.getClotheById(id);
+    }
+    @GetMapping("/description/{des}")
+    public List<Clothe> getClotheByDescription(@PathVariable("des") String des){
+        return servicio.getClotheByDescription(des);
+    }
+    @GetMapping("/price/{price}")
+    public List<Clothe> getClotheByPrice(@PathVariable("price") Integer price){
+        return servicio.getClotheByPrice(price);
     }
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)

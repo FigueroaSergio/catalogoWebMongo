@@ -57,4 +57,8 @@ public class UserRepository {
     public void deleteAll() {
         crud1.deleteAll();
     }
+
+    public List<User> getUsersByBirthday(String month) {
+        return crud1.getUsersByBirthday(month);
+    }
 }

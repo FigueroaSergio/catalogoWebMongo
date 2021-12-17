@@ -48,5 +48,13 @@ public class ClotheRepository {
 	        return crud2.findById(id).orElse(null);
 	    }
 
+    public List<Clothe> getClotheByDescription(String des) {
+       return crud2.getClotheByDescription(des);
+    }
+
+    public List<Clothe> getClotheByPrice(Integer price) {
+        return crud2.getClotheByPrice(price); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

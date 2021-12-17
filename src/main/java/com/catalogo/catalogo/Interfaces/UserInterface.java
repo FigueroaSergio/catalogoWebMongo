@@ -6,6 +6,7 @@
 package com.catalogo.catalogo.Interfaces;
 
 import com.catalogo.catalogo.Entities.User;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -21,4 +22,10 @@ public interface UserInterface extends MongoRepository<User,Integer>{
     
     @Query("{$and:[ {email: ?0}, {password:?1}]}")
     User getUserByEmailAndPassword(String email, String password);
+    
+    @Query("{monthBirthtDay:?0}")
+    List<User> getUsersByBirthday(String month);
+
+    
+    
 }
